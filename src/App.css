@@ -1,10 +1,25 @@
 .App {
   text-align: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  font-family: "Inter";
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.app__header {
+  width: 100vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* display: flex; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,19 +28,11 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar__items {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-around;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +42,135 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* map styles */
+.map {
+  /* background-color: red; */
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Share styles */
+
+.share__container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.share__btn {
+  width: 100px;
+  height: 30px;
+  background-color: #5dac7d;
+  border: none;
+  color: white;
+  font-size: 15px;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.logo__container {
+  margin-top: 25px;
+}
+
+/* modal styles */
+.modal {
+  /* display: none; Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal__content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 250px; /* Could be more or less, depending on screen size */
+  padding: 30px;
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal__close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: none;
+  border: none;
+}
+
+.modal__title {
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  color: #5d78ac;
+}
+
+.modal__name {
+  line-height: 15px;
+  text-align: center;
+  color: black;
+}
+
+.modal__number {
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.modal__price {
+  color: #5dac7d;
+  line-height: 19px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.modal__distance {
+  line-height: 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.modal__buttons {
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* .modal__check_btn {
+  width: 100px;
+  padding: 10px 15px 10px 15px;
+  background-color: #7eb7c9;
+  height: 50px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+} */
+
+.modal__schedule_btn {
+  width: 80%;
+  padding: 10px 15px 10px 15px;
+  background-color: #5dac7d;
+  height: 50px;
+  color: white;
+  border-radius: 20px;
+  border: none;
 }

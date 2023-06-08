@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Zeina Toama ",
+    "e-mail": "Zeina@gmail.com ",
+    "phone": "0526326903",
+    "rating": "6.5",
+    "age": "26",
+    "owner": true,
+    "official docs": "docs1.File",
+    "ownerRating": "8.5",
+    "Dimensions": [4, 5],
+    "bankAccount": "848848373"
+  },
+  {
+    "name": "Duaa Zubidat",
+    "e-mail": "Duaa@gmail.com ",
+    "phone": "0526326943",
+    "rating": "8.5",
+    "age": "46",
+    "owner": true,
+    "official docs": "docs2.File",
+    "ownerRating": "6.5",
+    "Dimensions": [5, 10],
+    "bankAccount": "123456789"
+  },
+  {
+    "name": "Noor Mahajne ",
+    "e-mail": "Noor@gmail.com ",
+    "phone": "0523366903",
+    "rating": "9.5",
+    "age": "83",
+    "owner": true,
+    "official docs": "doc3.File",
+    "ownerRating": "2.5",
+    "Dimensions": [4, 5],
+    "bankAccount": "987654321"
+  },
+  {
+    "name": "Amir Kannane",
+    "e-mail": "Amir@gmail.com ",
+    "phone": "0526322903",
+    "rating": "6.5",
+    "age": "42",
+    "owner": true,
+    "official docs": "docs4.File",
+    "ownerRating": "9.0",
+    "Dimensions": [5, 10],
+    "bankAccount": "192837465"
+  },
+  {
+    "name": "Nusser Anabassu ",
+    "e-mail": "Nusser@gmail.com ",
+    "phone": "0526329903",
+    "rating": "5.5",
+    "age": "19",
+    "owner": true,
+    "official docs": "docs5.File",
+    "ownerRating": "8.5",
+    "Dimensions": [6, 7],
+    "bankAccount": "918273645"
+  },
+  {
+    "name": "Haribo Daadous ",
+    "e-mail": "Haribo@gmail.com ",
+    "phone": "0523326903",
+    "rating": "7.5",
+    "age": "26",
+    "owner": true,
+    "official docs": "docs6.File",
+    "ownerRating": "3.0",
+    "dimensions": [4, 5],
+    "bankAccount": "087542765"
+  }
+]
