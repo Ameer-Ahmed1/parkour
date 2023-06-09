@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import image from "../../images/location2.png";
+import Modal from "../Modals/Modal";
+import navigate from "../../images/navigate.png";
 
 let API_KEY = "AIzaSyDhx8cq9h2QQv7axZlQN1EaYQn18Ii-W3s";
 
@@ -23,6 +25,8 @@ const users = [
     Dimensions: [4, 5],
     position: { lat: 32.12004106949362, lng: 34.804741336266325 },
     bankAccount: "848848373",
+    distance: 20,
+    price: 2,
   },
   {
     name: "Duaa Zubidat",
@@ -36,6 +40,8 @@ const users = [
     Dimensions: [5, 10],
     position: { lat: 32.11831485876209, lng: 34.8018355049436 },
     bankAccount: "123456789",
+    distance: 20.5,
+    price: 1.5,
   },
   {
     name: "Noor Mahajne ",
@@ -49,9 +55,11 @@ const users = [
     Dimensions: [4, 5],
     position: { lat: 32.11378539749989, lng: 34.80728474099319 },
     bankAccount: "987654321",
+    distance: 19.6,
+    price: 3,
   },
   {
-    name: "Amir Kannane",
+    name: "Ameer Kannane",
     "e-mail": "Amir@gmail.com ",
     phone: "0526322903",
     rating: "6.5",
@@ -62,9 +70,11 @@ const users = [
     Dimensions: [5, 10],
     position: { lat: 32.108823764853625, lng: 34.80526685714722 },
     bankAccount: "192837465",
+    distance: 17.5,
+    price: 0.5,
   },
   {
-    name: "Nusser Anabassu ",
+    name: "Nusser Anabussy ",
     "e-mail": "Nusser@gmail.com ",
     phone: "0526329903",
     rating: "5.5",
@@ -75,6 +85,8 @@ const users = [
     Dimensions: [6, 7],
     position: { lat: 32.11066596997447, lng: 34.80345343786088 },
     bankAccount: "918273645",
+    distance: 30,
+    price: 2.5,
   },
   {
     name: "Haribo Daadous ",
@@ -88,12 +100,21 @@ const users = [
     dimensions: [4, 5],
     position: { lat: 32.112362552078636, lng: 34.80491211301439 },
     bankAccount: "087542765",
+    distance: 10,
+    price: 3,
   },
 ];
+
+let markers = [];
+// let user;
 
 // function addMarker(lang, lat, user) {}
 
 export default function Map() {
+  let [isOpen, setIsopen] = useState(false);
+  let [user, setUser] = useState({});
+  let [isPublic, setIsPublic] = useState(false);
+
   const errorCallback = (error) => {
     console.log(error);
   };
@@ -112,18 +133,44 @@ export default function Map() {
       let myMarker = await new google.maps.Marker({
         position: { lat: lat, lng: lang },
         map,
+        icon: navigate,
         title: "my location",
       });
 
-      users.forEach(async (user) => {
+      let markerPublic = await new google.maps.Marker({
+        position: { lat: 32.11811901693865, lng: 34.805251813876026 },
+        map,
+        title: "my location",
+      });
+
+      markerPublic.addListener("click", () => {
+        setIsopen(true);
+        setIsPublic(true);
+      });
+
+      users.map(async (user) => {
         let newMarker = await new google.maps.Marker({
           position: user.position,
           map,
           icon: image,
           title: "new location",
         });
+
         newMarker.setMap(map);
+        newMarker.addListener("click", () => {
+          setIsopen(true);
+          setUser(user);
+        });
+        markers.push(newMarker);
       });
+
+      {
+        markers.forEach(async (marker) => {
+          marker.addListener("click", () => {
+            console.log("hi");
+          });
+        });
+      }
 
       const styles = {
         default: [],
@@ -151,15 +198,33 @@ export default function Map() {
     });
   };
 
-  const currentPos = navigator.geolocation.getCurrentPosition(
-    successCallback,
-    errorCallback
-  );
+  // const currentPos = navigator.geolocation.getCurrentPosition(
+  //   successCallback,
+  //   errorCallback
+  // );
 
   const id = navigator.geolocation.watchPosition(
     successCallback,
     errorCallback
   );
 
-  return <div id="map" className="map"></div>;
+  return (
+    <div>
+      <div id="map" className="map"></div>
+
+      {isOpen && (
+        <Modal
+          isPublic={isPublic}
+          name={user.name}
+          distance={user.distance}
+          isOpen={isOpen}
+          price={user.price}
+          number={user.phone}
+          onClose={() => {
+            setIsopen(false);
+          }}
+        />
+      )}
+    </div>
+  );
 }

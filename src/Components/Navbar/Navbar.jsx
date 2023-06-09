@@ -3,6 +3,7 @@ import Container from "../Container";
 import Logo from "../Logo";
 import Share from "../Share/Share";
 // import UserMenu from "../UserMenu";
+import shareMy from "../../images/shareMy.png";
 
 export default function navbar() {
   return (
@@ -11,7 +12,7 @@ export default function navbar() {
         <Container>
           <div className="navbar__items">
             <Logo />
-            <Share />
+            <Share image={shareMy} />
             {/* <UserMenu /> */}
           </div>
         </Container>

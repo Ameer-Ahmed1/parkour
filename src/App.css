@@ -15,7 +15,7 @@
 
 .app__header {
   width: 100vw;
-  height: 10vh;
+  max-height: 70px;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -31,8 +31,9 @@
 .navbar__items {
   display: flex;
   flex-direction: row;
+  max-height: 100px;
   width: auto;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @keyframes App-logo-spin {
@@ -47,7 +48,7 @@
 /* map styles */
 .map {
   /* background-color: red; */
-  height: 90vh;
+  height: 85vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -60,7 +61,8 @@
 .share__container {
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 20px;
+  margin-right: 50px;
 }
 
 .share__btn {
@@ -74,9 +76,13 @@
   border-radius: 20px;
 }
 
-.logo__container {
-  margin-top: 25px;
+.share__btn:hover {
+  cursor: pointer;
 }
+
+/* .logo__container {
+  margin-top: 25px;
+} */
 
 /* modal styles */
 .modal {
@@ -85,25 +91,53 @@
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  /* overflow: auto; Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.modal__content {
+.modal__image {
+  width: 300px;
+}
+
+.modal__hour_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.modal__container {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 250px; /* Could be more or less, depending on screen size */
+  width: 600px; /* Could be more or less, depending on screen size */
   padding: 30px;
   position: relative;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
+  justify-content: space-between;
+}
+
+.modal__content {
+  gap: 5px;
+}
+
+.modal__hour {
+  background-color: #7eb7c9;
+  border-radius: 20px;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  align-items: center;
 }
 
 .modal__close {
@@ -112,6 +146,10 @@
   top: 12px;
   background: none;
   border: none;
+}
+
+.modal__close:hover {
+  cursor: pointer;
 }
 
 .modal__title {
@@ -149,10 +187,26 @@
 
 .modal__buttons {
   /* display: flex; */
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  width: 200px;
+}
+
+.modal__shcedule {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__hour_silver {
+  background: #d9d9d9;
+}
+
+.modal__hour_green {
+  background: #5dac7d;
 }
 
 /* .modal__check_btn {
@@ -166,11 +220,29 @@
 } */
 
 .modal__schedule_btn {
-  width: 80%;
+  width: 100%;
   padding: 10px 15px 10px 15px;
   background-color: #5dac7d;
   height: 50px;
   color: white;
   border-radius: 20px;
   border: none;
+}
+
+.modal__schedule_btn:hover {
+  cursor: pointer;
+}
+
+.share__image {
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+/* logo */
+
+.logo__img {
+  width: 200px;
+  height: 15vh;
 }
